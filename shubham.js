@@ -1,28 +1,28 @@
 var $slider = $('.slider');
 
-            if ($slider.length) {
-              var currentSlide;
-              var slidesCount;
-              var sliderCounter = document.createElement('div');
-              sliderCounter.classList.add('slider__counter');
-              
-              var updateSliderCounter = function(slick, currentIndex) {
-                currentSlide = slick.slickCurrentSlide() + 1;
-                slidesCount = slick.slideCount;
-                $(sliderCounter).text(currentSlide + '/' +slidesCount)
-              };
+if ($slider.length) {
+  var currentSlide;
+  var slidesCount;
+  var sliderCounter = document.createElement('div');
+  sliderCounter.classList.add('slider__counter');
 
-              $slider.on('init', function(event, slick) {
-                $slider.append(sliderCounter);
-                updateSliderCounter(slick);
-              });
+  var updateSliderCounter = function (slick, currentIndex) {
+    currentSlide = slick.slickCurrentSlide() + 1;
+    slidesCount = slick.slideCount;
+    $(sliderCounter).text(currentSlide + '/' + slidesCount)
+  };
 
-              $slider.on('afterChange', function(event, slick, currentSlide) {
-                updateSliderCounter(slick, currentSlide);
-              });
+  $slider.on('init', function (event, slick) {
+    $slider.append(sliderCounter);
+    updateSliderCounter(slick);
+  });
 
-              $slider.slick();
-            }
+  $slider.on('afterChange', function (event, slick, currentSlide) {
+    updateSliderCounter(slick, currentSlide);
+  });
+
+  $slider.slick();
+}
 
 
 
@@ -34,19 +34,19 @@ if ($slider1.length) {
   var slidesCount;
   var slider1Counter = document.createElement('div');
   slider1Counter.classList.add('slider1__counter');
-  
-  var updateSlider1Counter = function(slick, currentIndex) {
+
+  var updateSlider1Counter = function (slick, currentIndex) {
     currentSlide = slick.slickCurrentSlide() + 1;
     slidesCount = slick.slideCount;
-    $(slider1Counter).text(currentSlide + '/' +slidesCount)
+    $(slider1Counter).text(currentSlide + '/' + slidesCount)
   };
 
-  $slider1.on('init', function(event, slick) {
+  $slider1.on('init', function (event, slick) {
     $slider1.append(slider1Counter);
     updateSlider1Counter(slick);
   });
 
-  $slider1.on('afterChange', function(event, slick, currentSlide) {
+  $slider1.on('afterChange', function (event, slick, currentSlide) {
     updateSlider1Counter(slick, currentSlide);
   });
 
