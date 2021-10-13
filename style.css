@@ -36,6 +36,7 @@ body,
 html {
 	background-color: #110f15;
 	scroll-behavior: smooth;
+	user-select:none;
 }
 
 .hidden {
